@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa Assustadora</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Impede barras de rolagem */
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #header-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: green;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #header-container a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #message-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #video-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: red;
+            font-size: 20px;
+            z-index: 1;
+        }
+
+        video {
+            width: 100vw; /* Ocupa a largura total da viewport */
+            height: 100vh; /* Ocupa a altura total da viewport */
+            object-fit: cover; /* Redimensiona o vídeo para cobrir o contêiner */
+            display: none; /* Inicialmente esconde o vídeo */
+        }
+
+        .play-button {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-container">
+        Site criado por <a href="https://youtube.com/channel/UCnd95gsN0-1YLzXwh_k_kqg?si=E1HCvsXpmma2kWWX" target="_blank">Clique aqui</a>
+    </div>
+
+    <div id="message-container">
+        <p>Não aperte o botão play, pois isso pode lhe afetar drasticamente.</p>
+    </div>
+
+    <div id="video-text">
+        Jeff The killer, você foi assustado!
+    </div>
+
+    <button class="play-button" onclick="playVideo()">Apertar</button>
+
+    <video id="myVideo" loop>
+        <source src="https://xanonimoxx.github.io/99990/Video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <script>
+        function playVideo() {
+            document.getElementById("myVideo").style.display = "block";
+            document.getElementById("myVideo").play();
+            document.getElementById("message-container").style.display = "none";
+            document.getElementById("header-container").style.display = "none";
+            document.getElementById("video-text").style.display = "none";
+            document.querySelector('.play-button').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
